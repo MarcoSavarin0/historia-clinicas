@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+    <title>Agregar Historia</title>
+</head>
+<body>
+<%- include("./partials/navbar.ejs") %> 
+<div class="d-flex justify-content-center" style="margin-top: 30px;">
+    <form method="post" action="/agregarHistoriaClinica/<%= paciente.id %>" id="agregar-historia-clinica-form" class="bg-light p-3 rounded">
+      <h3 class="mb-3">Agregar Historia Clínica</h3>
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha" required>
+      </div>
+      <div class="form-group">
+        <label for="diagnostico">Diagnóstico:</label>
+        <input type="text" class="form-control" id="diagnostico" name="diagnostico" required>
+      </div>
+      <div class="form-group">
+        <label for="tratamiento">Tratamiento:</label>
+        <textarea class="form-control" id="tratamiento" name="tratamiento" rows="3" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+  
+      
+  
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

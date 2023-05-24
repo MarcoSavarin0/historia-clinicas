@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include("./partials/head.ejs") %>
+    <title>Detalle de Paciente</title>
+    
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container mt-3">
+      <h1>Detalle de Paciente</h1>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= paciente.nombre %> <%= paciente.apellido %></h5>
+          <p class="card-text"><strong>Edad:</strong><%= calcularEdad(paciente.fecha_nacimiento) %> años</p>
+          <p class="card-text"><strong>Fecha de nacimiento:</strong> <%= paciente.fecha_nacimiento %></p>
+          <p class="card-text"><strong>DNI:</strong> <%= paciente.dni %></p>
+          <p class="card-text"><strong>Teléfono:</strong> <%= paciente.telefono %> </p>
+          <p class="card-text"><strong>Domicilio:</strong> <%= paciente.domicilio %></p>
+          <p class="card-text"><strong>Obra Social:</strong> <%= paciente.obra_social %></p>
+          <p class="card-text"><strong>Numero de Obra Social:</strong> <%= paciente.nObraSocial%></p>
+        </div>
+      </div>
+      <a id="agregar-historia-clinica-btn" class="btn btn-primary" href="/historiaClinica/<%= paciente.id %>">Agregar Historia Clínica</a>
+      <h2>Visitas al Médico</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              
+              <th>Diagnóstico</th>
+              <th>Tratamiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% paciente.visitas.forEach(visita => { %>
+              <tr>
+                <td><%= visita.fecha %></td>
+                <td><%= visita.diagnostico %></td>
+                <td><%= visita.tratamiento %></td>
+              </tr>
+              <% }) %>
+          
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+    
+    <!-- Enlace al archivo JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
