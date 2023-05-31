@@ -12,7 +12,7 @@
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title"><%= paciente.nombre %> <%= paciente.apellido %></h5>
-          <p class="card-text"><strong>Edad:</strong><%= calcularEdad(paciente.fecha_nacimiento) %> años</p>
+          <p class="card-text"><strong>Edad:</strong><%= calcularEdad(paciente.fechaDeNacimiento) %> años</p>
           <p class="card-text"><strong>Fecha de nacimiento:</strong> <%= paciente.fecha_nacimiento %></p>
           <p class="card-text"><strong>DNI:</strong> <%= paciente.dni %></p>
           <p class="card-text"><strong>Teléfono:</strong> <%= paciente.telefono %> </p>
@@ -21,7 +21,7 @@
           <p class="card-text"><strong>Numero de Obra Social:</strong> <%= paciente.nObraSocial%></p>
         </div>
       </div>
-      <a id="agregar-historia-clinica-btn" class="btn btn-primary" href="/historiaClinica/<%= paciente.id %>">Agregar Historia Clínica</a>
+      <a id="agregar-historia-clinica-btn" class="btn btn-primary" href="/historiaClinica/<%= paciente.idPacientes %>">Agregar Historia Clínica</a>
       <h2>Visitas al Médico</h2>
       <div class="table-responsive">
         <table class="table table-striped">
@@ -30,15 +30,14 @@
               <th>Fecha</th>
               
               <th>Diagnóstico</th>
-              <th>Tratamiento</th>
+              
             </tr>
           </thead>
           <tbody>
-            <% paciente.visitas.forEach(visita => { %>
+            <% paciente.observaciones.forEach(visita => { %>
               <tr>
-                <td><%= visita.fecha %></td>
-                <td><%= visita.diagnostico %></td>
-                <td><%= visita.tratamiento %></td>
+                <td><%= visita.fecha_visita %></td>
+                <td><%= visita.descripcion %></td>
               </tr>
               <% }) %>
           

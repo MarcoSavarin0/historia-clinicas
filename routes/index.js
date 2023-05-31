@@ -14,6 +14,8 @@ router.get('/buscar', controller.buscarPaciente);
 //hacer el post del detalle con sus rutas :id
 
 router.get('/historiaClinica/:id', controller.historiaClinica)
- router.post('/agregarHistoriaClinica/:id', controller.agregarHistoriaClinica)
+router.post('/agregarHistoriaClinica/:id', controller.agregarHistoriaClinica)
 
+
+router.get('/prueba', controller.prueba)
 module.exports = router;

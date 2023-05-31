@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    
     "start": "nodemon ./bin/www "
   },
   "dependencies": {
@@ -13,10 +12,13 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "mysql2": "^3.3.3",
     "nodemon": "^2.0.22",
-    "opn": "^6.0.0"
+    "opn": "^6.0.0",
+    "sequelize": "^6.31.1"
   },
   "devDependencies": {
-    "cross-spawn": "^7.0.3"
+    "cross-spawn": "^7.0.3",
+    "sequelize-cli": "^6.6.0"
   }
 }
