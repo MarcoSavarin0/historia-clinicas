@@ -10,7 +10,7 @@ Este proyecto de historias clínicas fue desarrollado utilizando las siguientes 
 
 🖼️ **EJS**: Motor de plantillas de JavaScript que permite generar vistas HTML dinámicas utilizando sintaxis de JavaScript.
 
-💾 **JSON**: Formato de archivo utilizado para almacenar la información de los pacientes y las visitas médicas.
+💾 **MySQL**: Sistema de gestión de bases de datos relacional utilizado para almacenar la información de los pacientes y las visitas médicas.
 
 ## Requisitos previos 📋
 
@@ -18,6 +18,7 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 
 - **Node.js** (versión 10 o superior)
 - **NPM** (Node Package Manager)
+- **XAMPP**: Paquete de software que incluye Apache, MySQL y PHP para crear un entorno de desarrollo local.
 
 ## Configuración inicial ⚙️
 
@@ -25,8 +26,15 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado lo siguiente:
 2. Abre una terminal y navega hasta el directorio del proyecto.
 3. Ejecuta el siguiente comando para instalar las dependencias del proyecto:
 
+npm install
+
+
+4. Inicia el servidor de MySQL utilizando XAMPP y asegúrate de que esté en ejecución.
+
+5. Crea una base de datos en MySQL y configura la conexión en el archivo `config.js` del proyecto.
 
 ## Ejecución del proyecto ▶️
+npm start
 
 Una vez que hayas realizado la configuración inicial, puedes ejecutar el proyecto utilizando el siguiente comando:
 
@@ -54,4 +62,4 @@ Esto iniciará el servidor y podrás acceder a la aplicación abriendo un navega
 ### Búsqueda de pacientes 🔍
 1. En la página de inicio, en la barra de búsqueda, ingresa el nombre o parte del nombre del paciente que deseas buscar.
 2. Los resultados de la búsqueda se mostrarán automáticamente a medida que vayas escribiendo.
-3. Haz clic en el paciente deseado para ver su perfil y su historial médico.
+3. Haz clic en el paciente deseado para ver su perfil
